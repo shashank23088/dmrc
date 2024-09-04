@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delhi Metro Real-Time Vehicle Positions</title>
+  <!-- <title>Delhi Metro Real-Time Vehicle Positions</title> -->
 </head>
 <body>
 
@@ -27,11 +27,23 @@
 
 <ol>
   <li><strong>Clone the repository:</strong></li>
-  <pre><code>git clone https://github.com/your-repo/delhi-metro-positions.git</code></pre>
+  <pre><code>git clone https://github.com/shashank23088/dmrc.git</code></pre>
 
   <li><strong>Install dependencies:</strong></li>
   <p>This project requires the <code>protobuf</code> and <code>pandas</code> Python libraries. Install them using:</p>
   <pre><code>pip install protobuf pandas</code></pre>
+
+  <li><strong>Generate the API key:</strong></li>
+  <p>You need an API key to access the Delhi Metro real-time data. Follow these steps to generate the API key:</p>
+  <ul>
+    <li>Go to the Delhi Open Transit Data portal: <a href="https://otd.delhi.gov.in/data/realtime/" target="_blank">https://otd.delhi.gov.in/data/realtime/</a></li>
+    <li>Sign up or log in to your account.</li>
+    <li>After logging in, navigate to the API section and generate your private API key.</li>
+    <li>Copy the API key. You will need it to access the real-time data.</li>
+  </ul>
+  <p>Once you have the API key, replace the placeholder in the <code>dmrc_api.py</code> script:</p>
+  <pre><code># Replace this with your actual API key
+api_key = "your_private_api_key"</code></pre>
 
   <li><strong>Generate the <code>dmrc_pb2.py</code> file:</strong></li>
   <p>If you do not already have the <code>dmrc_pb2.py</code> file, you need to generate it from the <code>dmrc.proto</code> file using the <code>protoc</code> command:</p>
@@ -76,7 +88,7 @@ delhi-metro-positions/
 </ul>
 
 <h2>Contact</h2>
-<p>If you encounter any issues, feel free to open an issue on the GitHub repository or reach out at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+<p>If you encounter any issues, feel free to open an issue on the GitHub repository or reach out at <a href="shashank23088@iiitd.ac.in">your-email@example.com</a>.</p>
 
 </body>
 </html>
