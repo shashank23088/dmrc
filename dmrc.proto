@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package transit_realtime;
+
+// Top-level message containing the feed of vehicle positions
+message FeedMessage {
+  FeedHeader header = 1;
+  repeated FeedEntity entity = 2;
+}
+
+// Metadata about the feed
+message FeedHeader {
+  string gtfs_realtime_version = 1;
+  uint64 timestamp = 2;
+}
+
+// An entity in the feed
+message FeedEntity {
+  string id = 1;
+  VehiclePosition vehicle = 4;  // Updated to match field number 4
+}
+
+// Vehicle's position information
+message VehiclePosition {
+  TripDescriptor trip = 1;
+  Position position = 2;
+  uint64 timestamp = 5;
+  VehicleDescriptor vehicle = 8;  // Updated to match field number 8
+}
+
+// Information about the trip the vehicle is serving
+message TripDescriptor {
+  string trip_id = 1;
+  string start_time = 2;
+  string start_date = 3;
+  uint32 direction_id = 4;
+  string route_id = 5;
+}
+
+// Information about the vehicle's position
+message Position {
+  float latitude = 1;
+  float longitude = 2;
+  float bearing = 5;  // Using field 5 for bearing
+}
+
+// Information identifying a specific vehicle
+message VehicleDescriptor {
+  string id = 1;
+  string label = 2;
+}
